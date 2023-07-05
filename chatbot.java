@@ -14,7 +14,7 @@ class Chatbot extends JFrame {
      
      
     private static final long serialVersionUID = 1L;
-    private JTextArea ca= new JTextArea();
+    private JTextArea ca= new JTextArea();// text field
     private JTextField cf=new JTextField();
     private JButton b=new JButton();
     private JLabel l=new JLabel();
@@ -29,8 +29,8 @@ class Chatbot extends JFrame {
         f.setSize(400,400);
         f.getContentPane().setBackground(Color.cyan);
         f.setTitle(ChatBot);
-        f.add(ca);
-        f.add(cf);
+        f.add(ca);// chatarea
+        f.add(cf); //chatbox
         ca.setSize(300,310);
         ca.setLocation(1, 1);
         ca.setBackground(Color.BLACK);
@@ -42,7 +42,7 @@ class Chatbot extends JFrame {
         b.setSize(400,20);
         b.setLocation(300,320);
 
-        b.addActionListener( new ActionListener() {
+        b.addActionListener( new ActionListener() { // receive notification if any action perform
             public void actionPerformed(ActionEvent e) {
 
                 if(e.getSource()==b) {                            Message sents on Click button
@@ -50,7 +50,7 @@ class Chatbot extends JFrame {
                     String text=cf.getText().toLowerCase();
                     ca.setForeground(Color.GREEN);
                     ca.append(You--+text+n);
-                    cf.setText();
+                    cf.setText(); // for clear chatbox
 
                     if(text.contains(hi)) {                          input Checking
                         replyMeth(Hi there);
